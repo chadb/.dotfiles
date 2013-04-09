@@ -29,6 +29,11 @@ if [ -d /usr/local/php/bin ]; then
     PATH=/usr/local/php/bin:$PATH
 fi
 
+# nodejs and package manager npm
+if [ -d /usr/local/share/npm/bin ]; then
+    PATH=/usr/local/share/npm/bin:$PATH
+fi
+
 # for fink in mac os x
 if [ -f /sw/bin/init.sh ]; then
     source /sw/bin/init.sh

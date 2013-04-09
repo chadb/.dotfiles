@@ -124,6 +124,10 @@ alias sc='pry -r config/environment.rb'
 alias sg='script/generator'
 alias sa='script/about'
 alias tmux="TERM=screen-256color-bce tmux"
+alias be='bundle exec'
+alias bet='TURN_FORMAT=pretty; bundle exec turn'
+alias bec='bundle exec cucumber'
+alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 
 #convenient sets because i'm lazy
 
@@ -168,3 +172,6 @@ fi
 
 
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+
+#tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
