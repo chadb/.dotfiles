@@ -119,30 +119,30 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias +='pushd .'
 alias _='popd'
-alias ss='script/server'
-alias sc='pry -r config/environment.rb'
-alias sg='script/generator'
-alias sa='script/about'
+alias ss='passenger start'
+alias sc='rails c'
+alias sg='rails g'
 alias tmux="TERM=screen-256color-bce tmux"
+alias tmuxinator="TERM=screen-256color-bce tmuxinator"
 alias be='bundle exec'
 alias bet='TURN_FORMAT=pretty; bundle exec turn'
 alias bec='bundle exec cucumber'
 alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
+alias tst='bundle exec rake log:clear; export TURN_FORMAT=dot; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 
 #convenient sets because i'm lazy
 
 bdd="beardendesigns.com"
-gc="glenncertain.com"
-rdi="riverdaleinn.com"
+org="beardendesigns.org"
 lmc="lmcoutcomes.lmcmc.com"
 dodm="dodm.lmcmc.com"
+dodml="dodmlogin.lmcmc.com"
 lmcdental="lmcdental.lmcmc.com"
-aeg="americaseducationguide.com"
 
 export EDITOR=vim
 export CVS_RSH=ssh
 export CUCUMBER_FORMAT=progress
-export TURN_FORMAT=pretty
+export TURN_FORMAT=dot
 
 
 #enable vi command line editing

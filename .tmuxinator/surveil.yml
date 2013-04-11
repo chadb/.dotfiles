@@ -11,8 +11,7 @@ tabs:
       layout: main-vertical
       panes:
         - vim
-        - #empty, will just run plain bash
-        - top
+        - htop
   - shell: git pull
   - database: rails db
   - server: rails s
