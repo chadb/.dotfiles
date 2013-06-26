@@ -124,9 +124,10 @@ alias sc='rails c'
 alias sg='rails g'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tmuxinator="TERM=screen-256color-bce tmuxinator"
+alias cucumber='cucumber --require features'
 alias be='bundle exec'
 alias bet='TURN_FORMAT=pretty; bundle exec turn'
-alias bec='bundle exec cucumber'
+alias bec='bundle exec cucumber --require features'
 alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 alias tst='bundle exec rake log:clear; export TURN_FORMAT=dot; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 
