@@ -130,6 +130,7 @@ alias bet='TURN_FORMAT=pretty; bundle exec turn'
 alias bec='bundle exec cucumber --require features'
 alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 alias tst='bundle exec rake log:clear; export TURN_FORMAT=dot; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
+alias lastweek='git log --author="`git config user.name`" --pretty=format:"%cd  %h  %s" --date=short --after={`chronic monday of last week`} --before={`chronic last sunday`}'
 
 #convenient sets because i'm lazy
 
