@@ -1,7 +1,22 @@
 "version 6.0
 set nocompatible
-syntax on
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install bundles
+"let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-endwise.git'
+Bundle 'tpope/vim-vividchalk.git'
+
 filetype plugin indent on
+syntax on
 set laststatus=2
 set statusline=%<%f%h%m%r%=%l,%c%V\ %P
 let s:cpo_save=&cpo
