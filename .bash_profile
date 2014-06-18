@@ -129,8 +129,10 @@ alias be='bundle exec'
 alias bet='TURN_FORMAT=pretty; bundle exec turn'
 alias bec='bundle exec cucumber --require features'
 alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
-alias tst='bundle exec rake log:clear; export TURN_FORMAT=dot; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
+alias tst='time bundle exec rake parallel:test; time bundle exec rake parallel:features; time bundle exec teaspoon'
 alias lastweek='git log --author="`git config user.name`" --pretty=format:"%cd  %h  %s" --date=short --after={`chronic monday of last week`} --before={`chronic last sunday`}'
+alias theo_local='bundle config local.theodolite ~/Sites/theodolite; bundle config disable_local_branch_check true'
+alias theo_gem='bundle config --delete local.theodolite; bundle config --delete disable_local_branch_check'
 
 #convenient sets because i'm lazy
 
@@ -161,8 +163,8 @@ if [ `uname -s` = "Darwin" ] ; then
     alias gvim='~/bin/mvim'
     export LANG=en_US.UTF-8
     export LC_ALL=en_US.UTF-8
-    export RUBY_GC_MALLOC_LIMIT=60000000
-    export RUBY_FREE_MIN=200000
+    #export RUBY_GC_MALLOC_LIMIT=60000000
+    #export RUBY_FREE_MIN=200000
 fi
 
 #if [ -f /usr/local/jruby/bin/jruby ]; then

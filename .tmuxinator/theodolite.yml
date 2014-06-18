@@ -1,22 +1,22 @@
 # ~/.tmuxinator/surveil.yml
 # you can make as many tabs as you wish...
-
-project_name: Theodolite Production
-project_root: ~/Sites/theodolite_production
+tmux_options: -2
+project_name: Theodolite
+project_root: ~/Sites/theodolite
 socket_name: 
-rvm: ruby-1.9.3-p327@rails-3.2.8
-pre: 
-tabs:
-  - editor:
-      layout: main-vertical
+#rvm: ruby-2.1.1@theodolite
+pre:  
+windows:
+  - editor: vim
+  - shell:
+      layout: 3970,204x51,0,0[204x36,0,0,1,204x14,0,37{101x14,0,37,10,102x14,102,37,11}]
       panes:
-        - vim
-        - #empty, will just run plain bash
-        - top
-  - shell: git pull
-  - database: rails db
-  - server: rails s
-  - logs: tail -f logs/development.log
-  - console: rails c
-  - capistrano:
+        -
+        -
+        -
+  - database: mysql -u root theodolite_development 
+  - server: 
+  - logs: tail -f test/dummy/log/development.log
+  - console: cd test/dummy; bundle exec rails console
+  - deploy: 
   - server: ssh lmcoutcomes.lmcmc.com

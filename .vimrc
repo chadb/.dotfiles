@@ -9,11 +9,13 @@ call vundle#rc()
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-endwise.git'
-Bundle 'tpope/vim-vividchalk.git'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-endwise.git'
+Plugin 'tpope/vim-vividchalk.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'christoomey/vim-tmux-navigator'
 
 filetype plugin indent on
 syntax on

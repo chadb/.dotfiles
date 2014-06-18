@@ -3,36 +3,10 @@ Installation
 cd $HOME
 git clone git://github.com/chadb/.dotfiles.git
 cd ~/.dotfiles
-git submodule init
-git submodule update
 ./link.sh 
 
-VIM Help Files
-  Remember to run
-    :Helptags
+VIM 
+  I'm using vundle to deal with plugins. https://github.com/gmarik/Vundle.vim
+  To install the vim bundle:
 
-VIM Plugins
-
-  Hey!  I'm using tpope's pathogen plugin to install vim plugins.  However,
-  when installing new plugins use git submodule add rather than git clone.
-
-  Example:
-
-  tpope says, "To install..."
-
-    cd ~/.vim/bundle
-    git clone git://github.com/tpope/vim-rails.git
-
-  *************************
-  **** Change this to: ****
-  *************************
-
-    cd ~/.dotfiles
-    git submodule add git://github.com/tpope/vim-rails.git .vim/bundle/vim-rails
-
-
-  When checking out for the first time:
-
-    cd ~/.dotfiles
-    git submodule init
-    git submodule update
+  vim +BundleInstall +qall
