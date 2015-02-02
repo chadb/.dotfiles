@@ -15,6 +15,9 @@ Plugin 'tpope/vim-endwise.git'
 Plugin 'tpope/vim-vividchalk.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'rizzatti/dash.vim'
+Plugin 'stefanoverna/vim-i18n'
+Bundle 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -222,6 +225,26 @@ function! RmNonPrint() range
     execute a:firstline . "," . a:lastline . 's/[^[:print:]]/ /'
 endfunction
 
+
+"from http://vim.wikia.com/wiki/Load_multiple_files_with_a_single_command
+command! -complete=file -nargs=+ Etabs call s:ETW('tabnew', <f-args>)
+command! -complete=file -nargs=+ Ewindows call s:ETW('new', <f-args>)
+command! -complete=file -nargs=+ Evwindows call s:ETW('vnew', <f-args>)
+
+function! s:ETW(what, ...)
+  for f1 in a:000
+    let files = glob(f1)
+    if files == ''
+      execute a:what . ' ' . escape(f1, '\ "')
+    else
+      for f2 in split(files, "\n")
+        execute a:what . ' ' . escape(f2, '\ "')
+      endfor
+    endif
+  endfor
+endfunction
+
+
 "treat .tpl files as c code
 :autocmd BufNewFile,BufRead *.tpl set filetype=smarty 
 ":autocmd BufNewFile,BufRead *.tpl source ~/.vim/syntax/Aspex_tpl.vim
@@ -257,3 +280,15 @@ set t_Co=256
 colorscheme vividchalk
 
 so ~/.vim/regexp_list.vim
+
+let g:rails_projections = {
+      \ "app/decorators/*_decorator.rb": {
+      \   "command": "decorator",
+      \   "template":
+      \     "class %SDecorator < SimpleDelegator\nend",
+      \   "test": [
+      \     "test/unit/%s_decorator_test.rb",
+      \     "spec/decorators/%s_decorator_spec.rb"
+      \   ],
+      \  "affinity": "model"
+      \ }}

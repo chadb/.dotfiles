@@ -126,7 +126,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias tmuxinator="TERM=screen-256color-bce tmuxinator"
 alias cucumber='cucumber --require features'
 alias be='bundle exec'
-alias bet='TURN_FORMAT=pretty; bundle exec turn'
+alias bet='bundle exec testrb'
 alias bec='bundle exec cucumber --require features'
 alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 alias tst='time bundle exec rake parallel:test; time bundle exec rake parallel:features; time bundle exec teaspoon'
