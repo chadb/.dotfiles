@@ -131,6 +131,7 @@ alias bec='bundle exec cucumber --require features'
 alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
 alias tst='time bundle exec rake parallel:test; time bundle exec rake parallel:features; time bundle exec teaspoon'
 alias lastweek='git log --author="`git config user.name`" --pretty=format:"%cd  %h  %s" --date=short --after={`chronic monday of last week`} --before={`chronic last sunday`}'
+alias thisweek='git log --author="`git config user.name`" --pretty=format:"%cd  %h  %s" --date=short --after={`chronic last sunday`} --before={`chronic sunday of this week`}'
 alias theo_local='bundle config local.theodolite ~/Sites/theodolite; bundle config disable_local_branch_check true'
 alias theo_gem='bundle config --delete local.theodolite; bundle config --delete disable_local_branch_check'
 

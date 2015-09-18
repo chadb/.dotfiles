@@ -17,6 +17,8 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'rizzatti/dash.vim'
 Plugin 'stefanoverna/vim-i18n'
+Plugin 'ngmy/vim-rubocop.git'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 Bundle 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
@@ -36,6 +38,10 @@ filetype plugin indent on    " required
 
 syntax on
 set laststatus=2
+" When the "unnamed" string is included in the 'clipboard' option, the unnamed
+" register is the same as the "* register.  Thus you can yank to and paste the
+" selection without prepending "* to commands.
+set clipboard="unnamed"
 set statusline=%<%f%h%m%r%=%l,%c%V\ %P
 let s:cpo_save=&cpo
 set cpo&vim

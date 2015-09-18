@@ -1,22 +1,22 @@
 # ~/.tmuxinator/surveil.yml
 # you can make as many tabs as you wish...
-tmux_options: -2
+#tmux_options: -2
 project_name: Surveil
 project_root: ~/Sites/surveil
-socket_name: 
+#socket_name: 
 #rvm: ruby-2.1.1@surveil
-pre: 
+#pre: 
 windows:
   - editor: vim
   - shell:
-      layout: 3970,204x51,0,0[204x36,0,0,1,204x14,0,37{101x14,0,37,10,102x14,102,37,11}]
+      layout: main-vertical
       panes:
-        -
-        -
-        -
-  - database: mysql -u root lmcdental_development 
-  - server: bundle exec rails server
-  - logs: tail -f log/development.log
-  - console: bundle exec rails console
-  - deploy: cap -T
-  - server: ssh lmcoutcomes.lmcmc.com
+          - tests: cat Testing.md
+          - logs: tail -f log/test.log
+  - servers:
+      layout: main-vertical
+      panes:
+          - console: bin/rails console
+          - database: foreman start db 
+          - solr: foreman start db 
+          - server: foreman start web 

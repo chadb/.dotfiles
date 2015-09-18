@@ -1,0 +1,46 @@
+# ~/.tmuxinator/remote.yml
+
+name: remote
+root: ~/Sites/surveil
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t remote
+
+windows:
+  - local: cap remote:roll_call 
+  - remote:
+      layout: even-vertical
+      panes:   # :setw synchronize-panes
+        - server1:
+          - ssh deploy@new-test-machine-91becaaf-d163-494b-9907-53bc76ec98ce.local
+        - server2:
+          - ssh deploy@new-test-machine-63371584-7eac-41c6-b9a2-38acdf2fbdc5.local
+        - server3:
+          - ssh deploy@new-test-machine-43f4da38-8785-40f3-93d0-365e16c6c3da.local
+        - server4:
+          - ssh deploy@new-test-machine-efd74c4f-ae20-4c28-a3bd-84ef878072a5.local
+        - server5:
+          - ssh deploy@new-test-machine-7afb3473-408d-4bc3-804b-6335df72fc1e.local
+        - server6:
+          - ssh deploy@new-test-machine-bf6129a2-46a1-4b81-9e33-e0b7547402a1.local
