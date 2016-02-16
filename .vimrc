@@ -62,7 +62,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set tabstop=4
 set fileencodings=utf-8,latin1
 set formatoptions=croq
@@ -77,11 +77,14 @@ set smartcase
 if &syntax != 'help'
 set syntax=help
 endif
-set textwidth=78
+set textwidth=80
 set smartindent
-set shiftwidth=4
+set shiftwidth=2
 set viminfo='1000,f1,\"50,:100,@100,/100
 set visualbell
+set tabpagemax=100
+set number
+set norelativenumber
 
 " skip the default mapping of the apple key in
 " /Applications/MacVim.app/Contents/Resources/vim/gvimrc
@@ -112,11 +115,11 @@ map <c-L> <C-W>l<C-W>_
 map <c-H> <C-W>h<C-W>_
 
 "let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-let Tlist_Sort_Type = "name"
-let Tlist_Auto_Open = 1
-let Tlist_WinWidth = 20
-let Tlist_Exit_OnlyWindow = 1
-let tlist_vhdl_settings = 'vhdl;e:entity;a:architecture;c:constant;p:package;b:package_body;t:type;s:signal;r:process;u:subroutines;y:subtypes'
+"let Tlist_Sort_Type = "name"
+"let Tlist_Auto_Open = 1
+"let Tlist_WinWidth = 20
+"let Tlist_Exit_OnlyWindow = 1
+"let tlist_vhdl_settings = 'vhdl;e:entity;a:architecture;c:constant;p:package;b:package_body;t:type;s:signal;r:process;u:subroutines;y:subtypes'
 
 function! VisualSelection()
 " Save register content and type.
@@ -168,27 +171,7 @@ function! s:ETW(what, ...)
   endfor
 endfunction
 
-
-"treat .tpl files as c code
-":autocmd BufNewFile,BufRead *.tpl set filetype=smarty 
-":autocmd BufNewFile,BufRead *.tpl source ~/.vim/syntax/Aspex_tpl.vim
-
-":autocmd BufNewFile,BufRead *.module set filetype=php 
-
-" ruby and eruby 
-"au BufNewFile,BufRead *.rhtml				set filetype=eruby
-":autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
-
-" abbreviations
-
 :abbr hte the
-" VHDL abbreviations
-":abbr sl; STD_LOGIC;
-":abbr slv; STD_LOGIC_VECTOR( downto );
-":abbr un; UNSIGNED( downto );
-":abbr s; SIGNED( downto );
-":abbr entity; library IEEE;use IEEE.STD_LOGIC_1164.all;entity name is    generic();    port();end name;
-":abbr arch; architecture rtl of name isbeginend rtl;
 
 let g:treeExplVertical=1 
 set spell
@@ -216,3 +199,13 @@ let g:rails_projections = {
       \   ],
       \  "affinity": "model"
       \ }}
+
+if has('gui_running')
+  set guifont=Osaka-Mono:h15
+endif
+
+" Set line numbers based on what we are doing
+":au FocusLost * :set number
+":au FocusGained * :set relativenumber
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
