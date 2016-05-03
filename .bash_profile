@@ -164,8 +164,13 @@ if [ `uname -s` = "Darwin" ] ; then
     alias gvim='~/bin/mvim'
     export LANG=en_US.UTF-8
     export LC_ALL=en_US.UTF-8
-    #export RUBY_GC_MALLOC_LIMIT=60000000
-    #export RUBY_FREE_MIN=200000
+fi
+
+# Linux specific
+if [ `uname -s` = "Linux" ] ; then
+    export LANG=en_US.UTF-8
+    export LANGUAGE=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
 fi
 
 #if [ -f /usr/local/jruby/bin/jruby ]; then
