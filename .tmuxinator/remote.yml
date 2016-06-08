@@ -30,7 +30,7 @@ root: ~/Sites/surveil
 windows:
   - local: cap remote:roll_call 
   - remote:
-      layout: even-vertical
+      layout: even-horizontal
       panes:   # :setw synchronize-panes
         - server1:
           - ssh deploy@new-test-machine-91becaaf-d163-494b-9907-53bc76ec98ce.local
