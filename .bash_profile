@@ -185,3 +185,7 @@ if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 #tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+#if [ -f ~/.iterm2_shell_integration.`basename $SHELL` ] ; then
+  ~/.iterm2_shell_integration.`basename $SHELL`
+#fi
