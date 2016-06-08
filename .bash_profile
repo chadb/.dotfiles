@@ -124,24 +124,21 @@ alias sc='rails c'
 alias sg='rails g'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tmuxinator="TERM=screen-256color-bce tmuxinator"
-alias cucumber='cucumber --require features'
+alias cucumber='xvfb-run -a cucumber --require features'
 alias be='bundle exec'
 alias bet='bundle exec testrb'
 alias bec='bundle exec cucumber --require features'
-alias pta='TURN_FORMAT=dot; bundle exec rake log:clear; time bundle exec rake parallel:test; time bundle exec rake parallel:features'
-alias tst='time bundle exec rake parallel:test; time bundle exec rake parallel:features; time bundle exec teaspoon'
+alias tst='cap -f lib/recipes/remote.rb remote:test | bin/rerun_false_positives.rb'
 alias lastweek='git log --author="`git config user.name`" --pretty=format:"%cd  %h  %s" --date=short --after={`chronic monday of last week`} --before={`chronic last sunday`}'
 alias thisweek='git log --author="`git config user.name`" --pretty=format:"%cd  %h  %s" --date=short --after={`chronic last sunday`} --before={`chronic sunday of this week`}'
-alias theo_local='bundle config local.theodolite ~/Sites/theodolite; bundle config disable_local_branch_check true'
-alias theo_gem='bundle config --delete local.theodolite; bundle config --delete disable_local_branch_check'
 
 #convenient sets because i'm lazy
 
 bdd="beardendesigns.com"
 org="beardendesigns.org"
-lmc="lmcoutcomes.lmcmc.com"
-dodm="dodm.lmcmc.com"
-dodml="dodmlogin.lmcmc.com"
+lmc="10.185.125.114" #"10.71.76.16"
+dodml="10.185.125.115" #"10.71.76.17"
+#dodm="10.71.76.18"
 lmcdental="lmcdental.lmcmc.com"
 
 export EDITOR=vim
