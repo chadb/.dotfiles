@@ -20,6 +20,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'ngmy/vim-rubocop.git'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'rhysd/vim-crystal'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
